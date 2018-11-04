@@ -1,4 +1,4 @@
-package com.geekbrains.startedserviceexample;
+package com.alekseisolovev.startedserviceexample;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.geekbrains.startedserviceexample;
+package com.alekseisolovev.startedserviceexample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
