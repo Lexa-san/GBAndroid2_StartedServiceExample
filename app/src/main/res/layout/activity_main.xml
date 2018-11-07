@@ -5,22 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.alekseisolovev.startedserviceexample.MainActivity">
+    tools:context=".ui.MainActivity">
 
     <Button
         android:id="@+id/button_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:onClick="onStartService"
+        style="@style/AppTheme.Button.Start"
         android:text="@string/button_start_service" />
 
     <Button
         android:id="@+id/button_stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:onClick="onStopService"
+        style="@style/AppTheme.Button.Stop"
         android:text="@string/button_stop_service" />
 
 </LinearLayout>

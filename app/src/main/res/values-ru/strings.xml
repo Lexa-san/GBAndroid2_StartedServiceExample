@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Приложение OpenWeather</string>
+    <string name="button_start_service">Запустить сервис</string>
+    <string name="button_stop_service">Остановить сервис</string>
+</resources>
