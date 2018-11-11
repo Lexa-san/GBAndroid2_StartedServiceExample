@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.alekseisolovev.openweather.model.TestModel;
+
 
 public class AppService extends IntentService {
     
@@ -26,17 +28,8 @@ public class AppService extends IntentService {
     protected void onHandleIntent(@Nullable Intent intent) {
         Log.d(LOG_TAG, "onHandleIntent START");
 
-        long endTime = System.currentTimeMillis() + 5000;
-        while (System.currentTimeMillis() < endTime) {
-            synchronized (this) {
-                try {
-                    wait(endTime - System.currentTimeMillis());
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        TestModel model = new TestModel();
+        model.work();
 
         if (intent != null) {
             intent.putExtra(RESULT, "Calculation is done.");

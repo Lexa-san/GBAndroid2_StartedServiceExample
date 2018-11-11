@@ -8,6 +8,11 @@
     tools:context=".ui.MainActivity">
 
     <Button
+        android:id="@+id/button_run_thread"
+        style="@style/AppTheme.Button.Start"
+        android:text="Run in thread" />
+
+    <Button
         android:id="@+id/button_start"
         style="@style/AppTheme.Button.Start"
         android:text="@string/button_start_service" />
