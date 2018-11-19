@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,8 +8,13 @@
 
     <Button
         android:id="@+id/button_run_thread"
-        style="@style/AppTheme.Button.Start"
+        style="@style/AppTheme.Button"
         android:text="Run in thread" />
+
+    <Button
+        android:id="@+id/button_asynctask"
+        style="@style/AppTheme.Button"
+        android:text="AsyncTask examlple" />
 
     <Button
         android:id="@+id/button_start"

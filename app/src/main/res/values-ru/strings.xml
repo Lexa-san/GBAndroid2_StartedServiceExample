@@ -3,4 +3,7 @@
     <string name="app_name">Приложение OpenWeather</string>
     <string name="button_start_service">Запустить сервис</string>
     <string name="button_stop_service">Остановить сервис</string>
+    <string name="browser_title">Browser</string>
+    <string name="button_go">OK</string>
+    <string name="status_ok">OK</string>
 </resources>

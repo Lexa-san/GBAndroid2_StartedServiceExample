@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String LOG_TAG = "MainActivity";
 
     private Button btnRunInThread;
+    private Button btnAsyncTask;
     private Button btnStart;
     private Button btnStop;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUI() {
         btnRunInThread = findViewById(R.id.button_run_thread);
+        btnAsyncTask = findViewById(R.id.button_asynctask);
         btnStart = findViewById(R.id.button_start);
         btnStop = findViewById(R.id.button_stop);
     }
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
 
                 Log.d(LOG_TAG, "btnRunInThread STOP");
+            }
+        });
+
+        btnAsyncTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), BrowserActivity.class);
+                startActivity(intent);
             }
         });
 

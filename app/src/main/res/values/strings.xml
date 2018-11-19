@@ -2,4 +2,8 @@
     <string name="app_name">OpenWeather App</string>
     <string name="button_start_service">Start Service</string>
     <string name="button_stop_service">Stop Service</string>
+    <string name="browser_title">Browser</string>
+    <string name="url_prefix" translatable="false">https://</string>
+    <string name="button_go">OK</string>
+    <string name="status_ok">OK</string>
 </resources>
