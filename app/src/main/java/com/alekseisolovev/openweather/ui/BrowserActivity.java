@@ -1,5 +1,8 @@
 package com.alekseisolovev.openweather.ui;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +10,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alekseisolovev.openweather.R;
 import com.alekseisolovev.openweather.service.browser.Browser;
@@ -44,14 +48,9 @@ public class BrowserActivity extends AppCompatActivity {
             @Override
             public void onComplete(String result) {
                 Log.d(TAG, "listener.onComplete");
-                int size = result.length();
-                String strToLog;
-                strToLog = (size > 100) ? (result.substring(0,100)) : (result);
-                Log.d(TAG, "result length: " + size);
-                Log.d(TAG, strToLog);
+                Log.d(TAG, "result length: " + result.length());
 
                 wvBrowser.loadData(result, Browser.MIMETYPE_DEFAULT, Browser.ENCODING_DEFAULT);
-//                wvBrowser.loadUrl("https://yandex.ru");
             }
         });
     }
@@ -67,11 +66,30 @@ public class BrowserActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Context context = v.getContext();
+                if (!hasConnect(context)) {
+                    Toast.makeText(context, "Подключите интернет", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 String uri = tvUrl.getText().toString();
                 if (uri.length() > 0) {
                     browser.request(uri);
                 }
             }
         });
+    }
+
+    private boolean hasConnect(Context context) {
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkinfo = connectivityManager.getActiveNetworkInfo();
+
+        if (networkinfo != null && networkinfo.isConnected()) {
+            return true;
+        }
+
+        return false;
     }
 }

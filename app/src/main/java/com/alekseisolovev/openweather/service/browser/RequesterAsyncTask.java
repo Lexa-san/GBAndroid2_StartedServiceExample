@@ -54,9 +54,9 @@ class RequesterAsyncTask extends AsyncTask<String, String, String> {
                 throw new IOException("Unexpected code " + response);
             }
 
-            publishProgress("Status: " + response);
             result.append(response.body().string());
-            Log.d(TAG, "Response body:" + result.substring(0, 255) + "...");
+            publishProgress(String.format("Status: %s, %s", response.code(), response.message()));
+            Log.d(TAG, String.format("Status: %s, %s. Body size: %d", response.code(), response.message(), result.length()));
 
         } catch (IOException e) {
             Log.e(TAG, e.getMessage(), e);
